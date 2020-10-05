@@ -471,6 +471,10 @@ function l(window, document, Date) { // Pass in the windoe Date function also fo
 				srcset = elem[_getAttribute](lazySizesCfg.srcsetAttr);
 				src = elem[_getAttribute](lazySizesCfg.srcAttr);
 
+				if(window.srcHostName) {
+					src = window.srcHostName + src;
+				}
+				console.log("src attribute unveil:", src);
 				if(isImg) {
 					parent = elem.parentNode;
 					isPicture = parent && regPicture.test(parent.nodeName || '');
